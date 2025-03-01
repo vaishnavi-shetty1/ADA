@@ -38,10 +38,10 @@ int main(){
 				for(i=100;i<10000;i+=100){
 					myListObj.fnGenRandArray(i);
 					clock_gettime(CLOCK_REALTIME,&tv);
-					dStart=tv.tv_sec+tv.tv_nsec/1e9;
+					dStart=tv.tv_sec+tv.tv_nsec/1000000000.0;
 					myListObj.fnSortArray();
 					clock_gettime(CLOCK_REALTIME,&tv);
-					dEnd=tv.tv_sec+tv.tv_nsec/1e9;
+					dEnd=tv.tv_sec+tv.tv_nsec/100000000.0;
 					fout<<i<<"\t"<<setprecision(10)<<dEnd-dStart<<endl;
 					}
 					cout<<"\ndata file generated and stored in file<SelectPlot.dat>\n";
